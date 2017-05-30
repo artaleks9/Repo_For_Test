@@ -1,26 +1,28 @@
 package com.codenvy.example.spring;
-//123456789
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
+//123456789
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class GreetingController implements Controller
-{
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
 
-   @Override
-   public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception
-   {
-      String userName = request.getParameter("user");
-      String result = "";
-      if (userName != null)
-      {
-        result = "Hello, " + userName + "!";
-      }
+import com.codenvy.example.spring.rr.Pklass;
 
-      ModelAndView view = new ModelAndView("hello_view");
-      view.addObject("greeting", result);
-      return view;
-   }
+public class GreetingController implements Controller {
+
+    @Override
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String userName = request.getParameter("user");
+        String result = "";
+        if (userName != null) {
+            result = "Hello, " + userName + "!";
+        }
+        String s;
+        double n = 4.8;
+        ModelAndView view = new ModelAndView("hello_view");
+        view.addObject("greeting", result);
+        return view;
+    }
+    Pklass pklass = new Pklass();
 }
