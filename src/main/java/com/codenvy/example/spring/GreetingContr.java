@@ -7,22 +7,23 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-import com.codenvy.example.spring.rr.Pklass;
+import com.codenvy.example.spring.gg.PklassRename;
 
-public class GreetingController implements Controller {
+public class GreetingContr implements Controller {
 
     @Override
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String userName = request.getParameter("user");
+    public ModelAndView handleRequest(HttpServletRequest req, HttpServletResponse respon) throws Exception {
+        String userName = req.getParameter("user");
         String result = "";
         if (userName != null) {
             result = "Hello, " + userName + "!";
         }
-        String s;
-        double n = 4.8;
+        String s,n;
+        
+        
         ModelAndView view = new ModelAndView("hello_view");
         view.addObject("greeting", result);
         return view;
     }
-    Pklass pklass = new Pklass();
+    PklassRename pklass = new PklassRename();
 }
